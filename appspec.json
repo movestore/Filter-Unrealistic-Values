@@ -1,0 +1,90 @@
+{
+  "settings": [
+	{
+      "id": "variab",
+      "name": "Data Attribute",
+      "description": "Insert the name of your selected attribute in the exact spelling as provided in your data set. If unsure, please run the App preceding this one in your workflow and check the Track Attributes in the Output Details overview.",
+      "defaultValue": null,
+      "type": "STRING"
+    },
+	{
+      "id": "rel",
+      "name": "Selection Relation",
+      "description": "Choose how you want to filter the individual property variable you selected. (Note that ‘==’, ‘>’, or ‘<’ can only be used for numeric and timestamp variables.)",
+      "defaultValue": null,
+      "type": "RADIOBUTTONS",
+      "options": [
+        {
+          "value": "%in%",
+          "displayText": "is one of the following options (categorical option, e.g. sex (m, f))"
+        },
+		        {
+          "value": "==",
+          "displayText": "== (equals)"
+        },
+		        {
+          "value": ">",
+          "displayText": "> (is greater than)"
+        },
+		        {
+          "value": "<",
+          "displayText": "< (is less than)"
+        }
+      ]
+	},
+	{
+      "id": "valu",
+      "name": "Selection Value",
+      "description": "Insert a value(s) for the attribute you have selected (categorical values must be comma-separated!). If you enter a timestamp, please ensure it is in UTC and follows the format ‘YYYY-mm-dd HH:MM:SS’.",
+      "defaultValue": null,
+      "type": "STRING"
+    },
+	{
+      "id": "time",
+      "name": "Time variable?",
+      "description": "Please check this box if your selected attribute is a timestamp. Please make sure that the timestamp is in UTC and follows the format 'YYYY-mm-dd HH:MM:SS'.",
+      "defaultValue": false,
+      "type": "CHECKBOX"
+    },
+		{
+      "id": "delete",
+      "name": "Delete event or set attribute to NA?",
+      "description": "Select this option if you do not only want the attribute that fulfills the above defined property set to NA (i.e. will not be used in future analysis steps), but also want the complete events (locations) deleted from your data set. Default FALSE (i.e. set attribute to NA)",
+      "defaultValue": false,
+      "type": "CHECKBOX"
+    }
+  ],
+  "dependencies": {
+    "R": [
+      {
+        "name": "move"
+      }
+    ]
+  },
+  "license": {
+    "key": "MIT"
+  },
+  "language": "eng",
+  "keywords": [
+	"filter",
+    "unrealistic",
+	"attribute",
+	"delete",
+	"NA"
+  ],
+  "people": [
+    {
+      "firstName": "Andrea",
+      "middleInitials": null,
+      "lastName": "Kölzsch",
+      "email": "akoelzsch@ab.mpg.de",
+      "roles": ["compiler","author","creator"],
+      "orcid": "0000-0003-0193-1563",
+      "affiliation": "Max-Planck-Institute of Animal Behavior",
+      "affiliationRor": "https://ror.org/026stee22"
+    }
+  ],
+  "documentation" : {
+    "url": "https://github.com/movestore/Filter-Unrealistic-Values/blob/main/README.md"
+  }
+}
