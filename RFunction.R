@@ -1,6 +1,6 @@
 library('move')
 
-rFunction <- function(data,variab,rel,valu,time=FALSE,delete=FALSE)
+rFunction <- function(data,variab,rel,valu,time=FALSE,delete=FALSE,setto=NULL)
 {
   Sys.setenv(tz="UTC")
 
@@ -20,7 +20,35 @@ rFunction <- function(data,variab,rel,valu,time=FALSE,delete=FALSE)
       
     if (any(fullrel))
     {
-      if (delete == TRUE) data <- data[-which(fullrel)] else data@data[which(fullrel),variab] <- NA
+      if (delete == TRUE) data <- data[-which(fullrel)] else 
+      {
+        if (is.null(setto)) 
+        {
+          data@data[which(fullrel),variab] <- NA 
+          logger.info(paste(length(fullrel),"values fulfill your relation and will be set to NA"))
+        } else if (setto=="mean")
+        {
+          mea <- mean(data@data[which(!fullrel),variab],na.rm=TRUE)
+          data@data[which(fullrel),variab] <- mea 
+          logger.info(paste(length(fullrel),"values fulfill your relation and will be set to the mean of all other values:",mea))
+        } else if (setto=="median")
+        {
+          med <- median(data@data[which(!fullrel),variab],na.rm=TRUE)
+          data@data[which(fullrel),variab] <- med
+          logger.info(paste(length(fullrel),"values fulfill your relation and will be set to the median of all other values:",med))
+        } else if (rel == "%in%" | time==TRUE)
+        {
+          data@data[which(fullrel),variab] <- setto
+          logger.info(paste0(length(fullrel)," values fulfill your relation and will be set to `",setto,"`"))
+        } else if (!is.na(as.numeric(setto)))
+        {
+          data@data[which(fullrel),variab] <- as.numeric(setto)
+          logger.info(paste(length(fullrel),"values fulfill your relation and will be set to",setto))
+        } else
+        {
+          logger.info("Your set value does not fit with the data type of the variable. Please adapt your Settings. Your seleted variable will not be adapted.")
+        }
+      }
 
     } else logger.info("None of your data fulfill the required property. No unrealistic cases.")
       

@@ -46,12 +46,19 @@
       "defaultValue": false,
       "type": "CHECKBOX"
     },
-		{
+	{
       "id": "delete",
-      "name": "Delete event or set attribute to NA?",
-      "description": "Select this option if you do not only want the attribute that fulfills the above defined property set to NA (i.e. will not be used in future analysis steps), but also want the complete events (locations) deleted from your data set. Default FALSE (i.e. set attribute to NA)",
+      "name": "Delete event?",
+      "description": "Select this option if you do not only want the attribute that fulfills the above defined property set to NA or another value (see below), but also want the complete events (locations) deleted from your data set. Default FALSE",
       "defaultValue": false,
       "type": "CHECKBOX"
+    },
+	{
+      "id": "setto",
+      "name": "Adapt value to",
+      "description": "Insert a value to which the selected variable of your unrealistic events shall be set. Take care that the data type fits to the variable. There are three generic values that you can set: NULL (= NA (not available) default; then in future analysis steps these values will be ignored), 'median' (then your unrealistic event values will be set to the median of all other event values in the data) and 'mean' (then your unrealistic event values will be set to the mean of all other event values in the data). We advise to set values to NULL (NA), as other options are rather subjective.",
+      "defaultValue": null,
+      "type": "STRING"
     }
   ],
   "dependencies": {
