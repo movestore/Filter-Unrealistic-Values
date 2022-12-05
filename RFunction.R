@@ -15,7 +15,7 @@ rFunction <- function(data,variab,rel,valu,time=FALSE,delete=FALSE,setto=NULL)
       fullrel <- data@data[[variab]] %in% valus
     } else
     {
-      if (time==TRUE) fullrel <- eval(parse(text=paste0("as.POSIXct(data@data$",variab,") ",rel," as.POSIXct('",valu,"')"))) else fullrel <- eval(parse(text=paste0("data@data$",variab," ",rel," '",valu,"'")))
+      if (time==TRUE) fullrel <- eval(parse(text=paste0("as.POSIXct(data@data$",variab,") ",rel," as.POSIXct('",valu,"')"))) else fullrel <- eval(parse(text=paste0("data@data$",variab," ",rel,valu)))
     }
       
     if (any(fullrel))
