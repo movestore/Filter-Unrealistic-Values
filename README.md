@@ -22,17 +22,17 @@ moveStack in Movebank format
 none.
 
 ### Settings
-`Data Attribute`: Name of the required data attribute. Take care that this parameter also exists in the Track Attributes of the input data set.
+**Data Attribute (`variab`):** Name of the required data attribute. Take care that this parameter also exists in the Track Attributes of the input data set.
 
-`Selection Relation`: By this parameter the relation in the required property has to be selected. The possible values differ by parameter data type, only numeric and timestamps variables can relate by '==', '>' or '<'.
+**Selection Relation (`rel`):** By this parameter the relation in the required property has to be selected. The possible values differ by parameter data type, only numeric and timestamps variables can relate by '==', '>' or '<'.
 
-`Selection Value`: Unrealistic threshold value of the relation that the data set has to fullfill. In case of `rel` = 'is one of the following' commas have to be used to separate the possible values. In case of a timestamp parameter please use the timestamp format with year, month, day, hour, minute and second as in the example: '2021-06-23 09:34:00"
+**Selection Value (`valu`):** Unrealistic threshold value of the relation that the data set has to fullfill. In case of `rel` = 'is one of the following' commas have to be used to separate the possible values. In case of a timestamp parameter please use the timestamp format with year, month, day, hour, minute and second as in the example: '2021-06-23 09:34:00"
 
-`Time variable?`: Please tick this parameter if your selected variable is a timestamp type, so that the App can properly work with it.
+**Time variable? (`time`):** Please tick this parameter if your selected variable is a timestamp type, so that the App can properly work with it.
 
-`Delete event?`: Select this option if, instead of unrealistic attribute values being set to a value (below), you want the complete event (localisation) deleted from the data set. Default FALSE.
+**Delete event? (`delete`):** Select this option if, instead of unrealistic attribute values being set to a value (below), you want the complete event (localisation) deleted from the data set. Default FALSE.
 
-`Adapt value to`: Insert here a value to which unrealistic attribute values shall be set. This can be any value (the data type must fit) or one of three generic options: NULL (NA = not available, then this value will not be used for future analysis steps in other Apps), 'mean' (mean value of all realistic attribute values) or 'median' (median value of all realistic attribute values).
+**Adapt value to (`setto`):** Insert here a value to which unrealistic attribute values shall be set. This can be any value (the data type must fit) or one of three generic options: NULL (NA = not available, then this value will not be used for future analysis steps in other Apps), 'mean' (mean value of all realistic attribute values) or 'median' (median value of all realistic attribute values).
 
 ### Null or error handling:
 **Setting 'Data Attribute:** If there is no individual variable with the name given here, an error will be returned.
