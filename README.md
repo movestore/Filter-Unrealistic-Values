@@ -37,14 +37,14 @@ none.
 ### Null or error handling:
 **Setting 'Data Attribute:** If there is no individual variable with the name given here, an error will be returned.
 
-**Setting 'Selection Relation:** If none of the relation options are selected, an error will be returned. It has to be carefully considered that the selected relation fits with the data type of the selected variable. Only numeric and timestamps variables can relate by '==', '>' or '<'.
+**Setting `Selection Relation`:** If none of the relation options are selected, an error will be returned. It has to be carefully considered that the selected relation fits with the data type of the selected variable. Only numeric and timestamps variables can relate by '==', '>' or '<'.
 
-**Setting 'Selection Value':** If there is no value entered, an error will be returned. The data type of the entered value has to fit with the selected variable.
+**Setting `Selection Value`:** If there is no value entered, an error will be returned. The data type of the entered value has to fit with the selected variable.
 
-**Setting 'Time variable?':** If the selected variable is a timestamp and it was not indicated here, the variable will be treated as a string of text and possibly not handled correctly, leading to errors. Similarly if your variable is not a timestamp and it is indicated here. Default is 'false'.
+**Setting `Time variable?`:** If the selected variable is a timestamp and it was not indicated here, the variable will be treated as a string of text and possibly not handled correctly, leading to errors. Similarly if your variable is not a timestamp and it is indicated here. Default is 'false'.
 
-**Setting 'Delete event?':** if all values are deleted, NULL output can be generated and lead to errors in the next App of the workflow.
+**Setting `Delete event?`:** if all values are deleted, NULL output can be generated and lead to errors in the next App of the workflow.
 
-**Setting 'Adapt value to':** If the data types do not fit, an error will occur. Unsensible values might lead to unexpected results in further Apps.
+**Setting `Adapt value to`:** If the data types do not fit, an error will occur. Unsensible values might lead to unexpected results in further Apps.
 
 **Data:** The full data set is returned.
