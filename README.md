@@ -35,7 +35,7 @@ none.
 **Adapt value to (`setto`):** Insert here a value to which unrealistic attribute values shall be set. This can be any value (the data type must fit) or one of three generic options: NULL (NA = not available, then this value will not be used for future analysis steps in other Apps), 'mean' (mean value of all realistic attribute values) or 'median' (median value of all realistic attribute values).
 
 ### Null or error handling:
-**Setting 'Data Attribute:** If there is no individual variable with the name given here, an error will be returned.
+**Setting 'Data Attribute`:** If there is no individual variable with the name given here, an error will be returned.
 
 **Setting `Selection Relation`:** If none of the relation options are selected, an error will be returned. It has to be carefully considered that the selected relation fits with the data type of the selected variable. Only numeric and timestamps variables can relate by '==', '>' or '<'.
 
