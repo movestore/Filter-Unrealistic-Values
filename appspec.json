@@ -12,7 +12,7 @@
       "id": "rel",
       "name": "Selection Relation",
       "description": "Choose how you want to filter the individual property variable you selected. (Note that ‘==’, ‘>’, or ‘<’ can only be used for numeric and timestamp variables.)",
-      "defaultValue": null,
+      "defaultValue": "%in%",
       "type": "RADIOBUTTONS",
       "options": [
         {
