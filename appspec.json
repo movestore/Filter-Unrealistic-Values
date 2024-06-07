@@ -1,9 +1,10 @@
 {
+  "version": "1.2",
   "settings": [
 	{
       "id": "variab",
       "name": "Data Attribute",
-      "description": "Insert the name of your selected attribute in the exact spelling as provided in your data set. If unsure, please run the App preceding this one in your workflow and check the Track Attributes in the Output Details overview.",
+      "description": "Insert the name of your selected attribute in the exact spelling as provided in your data set. If unsure, please run the App preceding this one in your workflow and check the Event Attributes in the Output Details overview.",
       "defaultValue": null,
       "type": "STRING"
     },
@@ -35,7 +36,7 @@
 	{
       "id": "valu",
       "name": "Selection Value",
-      "description": "Insert a value(s) for the attribute you have selected (categorical values must be comma-separated!). If you enter a timestamp, please ensure it is in UTC and follows the format ‘YYYY-mm-dd HH:MM:SS’.",
+      "description": "Insert a value(s) for the attribute you have selected (categorical values must be comma-separated!). If it is a unit value make sure that the units match the input data. If you enter a timestamp, please ensure it is in UTC and follows the format ‘YYYY-mm-dd HH:MM:SS’. x",
       "defaultValue": null,
       "type": "STRING"
     },
@@ -64,7 +65,10 @@
   "dependencies": {
     "R": [
       {
-        "name": "move"
+        "name": "move2"
+      },
+	  {
+        "name": "units"
       }
     ]
   },
@@ -90,8 +94,5 @@
       "affiliation": "Max-Planck-Institute of Animal Behavior",
       "affiliationRor": "https://ror.org/026stee22"
     }
-  ],
-  "documentation" : {
-    "url": "https://github.com/movestore/Filter-Unrealistic-Values/blob/main/README.md"
-  }
+  ]
 }
