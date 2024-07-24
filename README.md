@@ -5,7 +5,7 @@ MoveApps
 Github repository: *github.com/movestore/Filter-Unrealistic-Values*
 
 ## Description
-Filters your data according to a selected attribute and unrealistic value threshold and sets the attribute to a value that you set (or NULL) or deletes the complete events (localisations) for not being included in further analyses.
+Filters/Adapts your data according to a selected attribute and unrealistic value threshold and sets the attribute to a value that you set (or NULL) or deletes the complete events (localisations) for not being included in further analyses.
 
 ## Documentation
 For some calculations, unrealistic values of attributes make results less meaningfull. This App is meant to clean the data before, either (1) allowing to set attributes with unrealistic values to a user specified value, a mean or median value or NULL (= NA (not available), thus being excuded from average/duration etc. calcualtions) or (2) deleting complete events with unrealistic attribute values (set with parameter `delete`).
@@ -13,16 +13,16 @@ For some calculations, unrealistic values of attributes make results less meanin
 This Apps was developed to take biologically unsensibly large timelags from being used in e.g. cumulative durations of flight per day. Timelags were calculated with the Time Lag Between Locations App before this App in the workflow. However, the App can also be used for any other data attributes. Take care that data types fit.
 
 ### Input data
-moveStack in Movebank format
+move2 location object
 
 ### Output data
-moveStack in Movebank format
+move2 location object
 
 ### Artefacts
 none.
 
 ### Settings
-**Data Attribute (`variab`):** Name of the required data attribute. Take care that this parameter also exists in the Track Attributes of the input data set.
+**Data Attribute (`variab`):** Name of the required data attribute. Take care that this parameter also exists in the Event Attributes of the input data set. (Note that it is not possible to include Track Attributes. If this is important please let me know.)
 
 **Selection Relation (`rel`):** By this parameter the relation in the required property has to be selected. The possible values differ by parameter data type, only numeric and timestamps variables can relate by '==', '>' or '<'.
 
@@ -34,8 +34,12 @@ none.
 
 **Adapt value to (`setto`):** Insert here a value to which unrealistic attribute values shall be set. This can be any value (the data type must fit) or one of three generic options: NULL (NA = not available, then this value will not be used for future analysis steps in other Apps), 'mean' (mean value of all realistic attribute values) or 'median' (median value of all realistic attribute values).
 
+### Most common errors
+Note that it is not possible to use Track Attributes in this App. If this is important please let me know with an issue here.
+
+
 ### Null or error handling:
-**Setting `Data Attribute`:** If there is no individual variable with the name given here, an error will be returned.
+**Setting `Data Attribute`:** If there is no event attribute with the name given here, an error will be returned.
 
 **Setting `Selection Relation`:** If none of the relation options are selected, an error will be returned. It has to be carefully considered that the selected relation fits with the data type of the selected variable. Only numeric and timestamps variables can relate by '==', '>' or '<'.
 

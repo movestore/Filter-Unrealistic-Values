@@ -1,0 +1,8 @@
+{
+    "variab": "ground_speed",
+    "rel": ">",
+    "valu": 50,
+    "time": false,
+    "delete": false,
+    "setto": 55
+}
